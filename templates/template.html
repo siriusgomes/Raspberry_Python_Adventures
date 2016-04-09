@@ -4,6 +4,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+    $(document).bind("mobileinit", function(){
+      $.mobile.ajaxEnabled = false;
+    });
+</script>
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
@@ -20,7 +25,7 @@ $( document ).ready(function() {
 
 </script>
 
-<div data-role="page">
+<div data-role="page" data-url="{{ request.path }}">
   <div data-role="main" class="ui-content">
     <label for="switch">Sirius's bedroom light switch:</label>
     <input type="checkbox" data-role="flipswitch" name="switch" id="switch">
