@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+$( document ).ready(function() {
+    $('#switch').change(function() {
+        if ($(this).is(':checked')) {
+            $.get( "{{ url_for('light', status=1) }}" );
+        } else {
+            $.get( "{{ url_for('light', status=0) }}" );
+        }
+    });
+});
+
+</script>
+
+<div data-role="page">
+  <div data-role="main" class="ui-content">
+    <label for="switch">Sirius's bedroom light switch:</label>
+    <input type="checkbox" data-role="flipswitch" name="switch" id="switch">
+    <br>
+    <form action="/display" method="post">
+      <p><input type="text" name="firstline" maxlength="16"></p>
+      <p><input type="text" name="secondline" maxlength="16"></p>
+      <p><input type=submit value="Send it to Sirius' screen!"></p>
+     </form>
+  </div>
+</div>
+
+</body>
+</html>
