@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 from flask import Flask, render_template, request, url_for, redirect
+import logging
+import time
 
 # Library for the 1602A Display with PCF8574 display. Got from: http://www.circuitbasics.com/raspberry-pi-i2c-lcd-set-up-and-programming/
 import I2C_LCD_driver
@@ -7,7 +9,22 @@ import I2C_LCD_driver
 # Library for the GPIO ports of the raspberry pi 3
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(17, GPIO.OUT) #I'm using port 17 to control my relay
+
+RELAY_PORT=26
+SPEAKER_PORT=27
+
+GPIO.setup(RELAY_PORT, GPIO.OUT) #I'm using port 26 to control my relay
+GPIO.setup(SPEAKER_PORT, GPIO.OUT) #I'm using port 27 to control my speaker
+
+
+# Speaker things.
+BUZZER_REPETITIONS = 1000 
+BUZZER_DELAY = 0.001
+PAUSE_TIME = 0.3
+
+
+# Logging configs
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 app = Flask(__name__)
 
@@ -19,9 +36,9 @@ def index():
 @app.route('/light/<status>')
 def light(status):
     if status == "1":
-        GPIO.output(17,True)
+        GPIO.output(RELAY_PORT,True)
     elif status == "0":
-        GPIO.output(17,False)
+        GPIO.output(RELAY_PORT,False)
     return status
 
 @app.route('/display', methods=['POST'])
@@ -29,11 +46,20 @@ def display():
     mylcd = I2C_LCD_driver.lcd()
     mylcd.lcd_display_string(request.form['firstline'], 1)
     mylcd.lcd_display_string(request.form['secondline'], 2)
-    print request.form['firstline']
-    print request.form['secondline']
+    logging.debug(request.form['firstline'])
+    logging.debug(request.form['secondline'])
+    ring_speaker()
     return redirect(url_for('index')) 
+
+def ring_speaker(): 
+    # Buzzer time
+    for _ in xrange(BUZZER_REPETITIONS):
+        for value in [True, False]:
+            GPIO.output(27, value)
+            time.sleep(BUZZER_DELAY)
+    time.sleep(PAUSE_TIME)
+
 
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=80)
-
