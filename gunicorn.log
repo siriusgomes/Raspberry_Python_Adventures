@@ -1217,3 +1217,184 @@ IndentationError: expected an indented block
 [2016-04-22 17:07:24 +0000] [1081] [DEBUG] GET /
 [2016-04-22 17:07:24 +0000] [1081] [INFO] Parent changed, shutting down: <Worker 1081>
 [2016-04-22 17:07:24 +0000] [1081] [INFO] Worker exiting (pid: 1081)
+[2016-04-22 18:27:32 +0000] [2304] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x766bcbf0>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x766bc9f0>
+  pre_fork: <function pre_fork at 0x766bcaf0>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x766bc930>
+  pre_exec: <function pre_exec at 0x766bcf30>
+  worker_tmp_dir: None
+  post_worker_init: <function post_worker_init at 0x766bccf0>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x7664c330>
+  config: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x7664c030>
+  post_request: <function post_request at 0x7664c0b0>
+  user: 0
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x766bcdb0>
+  threads: 1
+  max_requests: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x7664c170>
+  chdir: /l/python
+  paste: None
+  default_proc_name: app:app
+  errorlog: gunicorn.log
+  loglevel: DEBUG
+  logconfig: None
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  daemon: False
+  ciphers: TLSv1
+  on_starting: <function on_starting at 0x766bc870>
+  worker_abort: <function worker_abort at 0x766bce70>
+  bind: ['0.0.0.0:80']
+  raw_env: []
+  reload: False
+  check_config: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x7664c270>
+  timeout: 30
+  ca_certs: None
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+  statsd_prefix: 
+[2016-04-22 18:27:32 +0000] [2304] [INFO] Starting gunicorn 19.4.5
+[2016-04-22 18:27:32 +0000] [2304] [DEBUG] Arbiter booted
+[2016-04-22 18:27:32 +0000] [2304] [INFO] Listening at: http://0.0.0.0:80 (2304)
+[2016-04-22 18:27:32 +0000] [2304] [INFO] Using worker: sync
+[2016-04-22 18:27:32 +0000] [2309] [INFO] Booting worker with pid: 2309
+[2016-04-22 18:27:32 +0000] [2304] [DEBUG] 1 workers
+[2016-04-22 18:28:04 +0000] [2309] [DEBUG] GET /
+[2016-04-22 18:28:07 +0000] [2309] [DEBUG] GET /light/1
+[2016-04-22 18:28:07 +0000] [2309] [DEBUG] GET /light/0
+[2016-04-22 18:28:20 +0000] [2309] [DEBUG] POST /display
+[2016-04-22 18:28:23 +0000] [2309] [DEBUG] GET /
+[2016-04-22 18:28:38 +0000] [2309] [DEBUG] POST /display
+[2016-04-22 18:28:41 +0000] [2309] [DEBUG] GET /
+[2016-04-22 18:29:40 +0000] [2309] [DEBUG] POST /display
+[2016-04-22 18:29:44 +0000] [2309] [DEBUG] GET /
+[2016-04-22 18:40:21 +0000] [2309] [DEBUG] GET /
+[2016-04-22 18:40:24 +0000] [2309] [DEBUG] GET /light/1
+[2016-04-22 18:40:24 +0000] [2309] [DEBUG] GET /light/0
+[2016-04-22 18:41:35 +0000] [2492] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x766bdbf0>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x766bd9f0>
+  pre_fork: <function pre_fork at 0x766bdaf0>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x766bd930>
+  pre_exec: <function pre_exec at 0x766bdf30>
+  worker_tmp_dir: None
+  post_worker_init: <function post_worker_init at 0x766bdcf0>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x7664d330>
+  config: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x7664d030>
+  post_request: <function post_request at 0x7664d0b0>
+  user: 0
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x766bddb0>
+  threads: 1
+  max_requests: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x7664d170>
+  chdir: /l/python
+  paste: None
+  default_proc_name: app:app
+  errorlog: gunicorn.log
+  loglevel: DEBUG
+  logconfig: None
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  daemon: False
+  ciphers: TLSv1
+  on_starting: <function on_starting at 0x766bd870>
+  worker_abort: <function worker_abort at 0x766bde70>
+  bind: ['0.0.0.0:80']
+  raw_env: []
+  reload: False
+  check_config: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x7664d270>
+  timeout: 30
+  ca_certs: None
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+  statsd_prefix: 
+[2016-04-22 18:41:35 +0000] [2492] [INFO] Starting gunicorn 19.4.5
+[2016-04-22 18:41:35 +0000] [2492] [DEBUG] Arbiter booted
+[2016-04-22 18:41:35 +0000] [2492] [INFO] Listening at: http://0.0.0.0:80 (2492)
+[2016-04-22 18:41:35 +0000] [2492] [INFO] Using worker: sync
+[2016-04-22 18:41:35 +0000] [2497] [INFO] Booting worker with pid: 2497
+[2016-04-22 18:41:35 +0000] [2492] [DEBUG] 1 workers
+[2016-04-22 18:41:42 +0000] [2497] [DEBUG] GET /
+[2016-04-22 18:41:44 +0000] [2497] [DEBUG] GET /light/1
+[2016-04-22 18:41:44 +0000] [2497] [DEBUG] GET /light/0
+[2016-04-22 18:41:53 +0000] [2497] [DEBUG] POST /display
+[2016-04-22 18:41:56 +0000] [2497] [DEBUG] GET /
+[2016-04-22 18:42:11 +0000] [2497] [DEBUG] POST /display
+[2016-04-22 18:42:15 +0000] [2497] [DEBUG] GET /
+[2016-04-22 18:42:37 +0000] [2497] [DEBUG] POST /display
+[2016-04-22 18:42:40 +0000] [2497] [DEBUG] GET /
