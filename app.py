@@ -52,6 +52,7 @@ def display():
     logging.debug(request.form['secondline'])
     #t = Thread(target=messageThread, args=(request.form['firstline'], request.form['secondLine'],))
     #t.start()
+    os.system("killall python")
     os.system("./display.py \"" + request.form['firstline'] + "\" \"" + request.form['secondline'] + "\" &")
     ring_speaker()
     return redirect(url_for('index'))
