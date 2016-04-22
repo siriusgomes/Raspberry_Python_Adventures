@@ -1,16 +1,19 @@
 #!/usr/bin/env python
-import I2C_LCD_driver
 from time import *
-
-mylcd = I2C_LCD_driver.lcd()
+import I2C_LCD_driver
+from sys import argv
 
 str_pad = " " * 16
-my_long_string = "This is a string that needs to scroll"
-my_long_string = str_pad + my_long_string
+my_long_string = str_pad + argv[1]
 
-while True:
-    for i in range (0, len(my_long_string)):
-        lcd_text = my_long_string[i:(i+16)]
-        mylcd.lcd_display_string(lcd_text,1)
-        sleep(0.15)
-        mylcd.lcd_display_string(str_pad,1)
+def message(firstLine, secondLine):
+    mylcd = I2C_LCD_driver.lcd()
+    mylcd.lcd_display_string(secondLine, 2)
+    while True:
+        for i in range (0, len(firstLine)):
+            lcd_text = firstLine[i:(i+16)]
+            mylcd.lcd_display_string(lcd_text,1)
+            sleep(0.10)
+            mylcd.lcd_display_string(str_pad,1)
+
+message(my_long_string, argv[2])
